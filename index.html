@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>jOpa</title>
-
-  <style>
-    .test-class {
-      color: blue;
-    }
-    #test-id {
-      color: pink;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test js library</title>
 </head>
 <body>
-  <div id="app">
-    <p>123</p>
-    <span>wer</span>
-  </div>
+    <div class="test">
+        <span>Text 1</span>
+        <p>Text 2</p>
+    </div>
 
-  <div class="alala"></div>
+    <div id="block">
+        <p>Text text</p>
+    </div>
 
-  <script type="text/javascript" src="jOpa.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+    <div id="block2"></div>
+    
+    <script src="SerjoJS.beta.js"></script>
+    <script>
+        const $js = new SerjoJS();
+
+        $js.get('.test span').html('Text 3');
+
+        $js.get('.test p').css({
+            color: '#fff',
+            backgroundColor: '#000',
+            display: 'flex',
+            width: 'fit-content'
+        });
+
+        const val1 = 150;
+        const val2 = 500;
+
+        $js.get('#block').append('div', {class: 'test-1', id: 'tes-id-1'}, `value: ${val1}`);
+
+        $js.get('#block').prepend('div', {class: 'test-2', id: 'tes-id-2'}, `value: ${val2}`);
+
+        $js.timeout(() => { console.log('test'); }, 100);
+
+        $js.ajax({
+            method: 'GET',
+            path: 'index.html',
+            headers: {
+                'X-Auth': 'auth-key',
+                'Content-type': 'application/x-www-form-urlencoded'
+            },
+            params: {
+                name: 'Mike',
+                age: 23,
+                position: false,
+                contract: 'yes'
+            }
+        }, (response) => {
+            console.log(response);
+        });
+    </script>
 </body>
 </html>
