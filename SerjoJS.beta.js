@@ -21,7 +21,7 @@ class SerjoJS {
         
             return this;
         } catch (err) {
-            console.error(err);
+            console.error('Server Error:', err.message);
         }
     }
 
@@ -70,7 +70,7 @@ class SerjoJS {
 
             return this;
         } catch (err) {
-            console.error(err);
+            console.error('Server Error:', err.message);
         }
     }
 
@@ -106,7 +106,7 @@ class SerjoJS {
     
             return this;
         } catch (err) {
-            console.error(err);
+            console.error('Server Error:', err.message);
         }
     }
 
@@ -130,7 +130,7 @@ class SerjoJS {
       
             return this;
         } catch (err) {
-            console.error(err);
+            console.error('Server Error:', err.message);
         }
     }
 
@@ -190,7 +190,7 @@ class SerjoJS {
     
             return this;
         } catch (err) {
-            console.error(err);
+            console.error('Server Error:', err.message);
         }
     }
 
@@ -214,7 +214,7 @@ class SerjoJS {
 
             return this;
         } catch (err) {
-            console.error(err);
+            console.error('Server Error:', err.message);
         }
     }
 }
